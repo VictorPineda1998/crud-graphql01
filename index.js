@@ -8,7 +8,8 @@ const {connectDB} = require("./db")
 
 const app = express()
 connectDB()
-app.get('/', (req, res) => res.send('Welcome to my api'))
+app.use(express.static('coffee-shop-html-template'));
+app.get('/', (req, res) => res.redirect('/index.html'))
 
 module.exports = app
 
